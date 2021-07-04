@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - ${MONGODB_DATA}:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: $MONGODB_USER
+      MONGO_INITDB_ROOT_PASSWORD: $MONGODB_PWD
+    command: --quiet --logpath /dev/null
+  api:
+    ports: 
+      - 3000:3000

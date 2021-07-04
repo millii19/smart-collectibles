@@ -3,7 +3,7 @@ const router = express.Router()
 
 router.route('/')
     .get((req, res) => {
-
+        res.send([])
     })
     .post((req, res) => {
         //auth
@@ -23,6 +23,7 @@ router.route('/:id')
     .delete((req, res) => {
         //auth
         //create
+        console.log('test')
         res.status(204).end()
     })
 
